@@ -4,6 +4,9 @@ import logo from './logo.jpg';
 import TDPHistory from './images/historyPage.png';
 import TDPHome from './images/homePage.png';
 import TDPProcessing from './images/processingPage.png';
+import BcreateLogin from './images/BankCreateLogin.png';
+import Bhome from './images/BankHomePage.png';
+import Blogin from './images/BankLogin.png';
 
 function App() {
   // State to track which image is currently zoomed in
@@ -73,6 +76,28 @@ function App() {
           <div className="project-entry">
             <h3>BankApp</h3>
             <p>A mobile-first e-commerce platform design focusing on secure transactions.</p>
+          
+           <div className="project-images">
+              <img 
+                src={Bhome} 
+                className="project-img" 
+                alt="BankApp Home Page" 
+                onClick={() => setSelectedImg(Bhome)}
+              />
+              <img 
+                src={BcreateLogin} 
+                className="project-img" 
+                alt="BankApp Create Login Page" 
+                onClick={() => setSelectedImg(BcreateLogin)}
+              />
+              <img 
+                src={Blogin} 
+                className="project-img" 
+                alt="BankApp Login Page" 
+                onClick={() => setSelectedImg(Blogin)}
+              />
+            </div>
+          
           </div>
         </section>
 
