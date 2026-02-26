@@ -1,34 +1,77 @@
+/* 1. The Moving Wave Background */
+.App {
+  text-align: center;
+  min-height: 100vh;
+  /* The Gradient: Blue -> Cyan -> Teal */
+  background: linear-gradient(-45deg, #ffffff, #090e0f, #ee0000, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+/* 2. Animation Keyframes */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 3. Header - Now Semi-Transparent */
 .App-header {
-  /* Keeps the header the full height of the window */
   min-height: 100vh; 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #304e8b;
+  /* Changed to RGBA so the wave shows through */
+  background-color: rgba(48, 78, 139, 0.85); 
   color: white;
 }
 
 .App-logo {
-  /* Removes fixed positioning so it flows naturally */
   height: 300px;
   width: 300px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 20px; /* Adds space between logo and text */
+  margin-bottom: 20px;
   animation: App-logo-spin infinite 20s linear;
 }
 
 .App-header p {
-  /* Removes fixed positioning */
   font-size: 50px;
   margin: 0;
 }
 
-/* Style for the new content section */
+/* 4. Content - Now Semi-Transparent */
 .App-content {
   padding: 50px;
-  background-color: #304e8b;
+  /* Matches header transparency */
+  background-color: rgba(48, 78, 139, 0.9);
   color: white;
   text-align: left;
 }
+
+/* About Section Styles */
+#about h1 {
+  border-bottom: 3px solid white;
+  display: inline-block;
+  font-size: 50px;
+}
+
+#about p {
+  font-size: 20px;
+  line-height: 1.6;
+  margin-top: -20px;    
+  margin-bottom: 100px;
+}
+
+/* Projects Section Styles */
+#projects h1 {
+  /* Changed from solid #304e8b to transparent so it doesn't look like a patch */
+  background-color: transparent; 
+  color: white;
+  font-size: 40px;
+  display: inline-block;     
+  border-bottom: 3px solid white;
+}
+
+

@@ -12,34 +12,34 @@ function App() {
         </p>
       </header>
 
-      {/* Section 2: Content (This creates the scroll) */}
+      {/* Section 2: Content */}
       <main className="App-content">
         <section id="about">
-          <h2>About Me</h2>
+          <h1>About Me</h1>
           <p>
-            
+           Hi my name is Zachary critchifled and I am a software developer who has experience in variuos different programming languages and frameworks.
+            I have a passion for creating innovative solutions and am always eager to learn new technologies.
           </p>
         </section>
-
-
 
         <section id="projects">
            <h1>My Projects</h1>
 
-           <div className="project-card">
+           <div className="TDP">
               <h3>Technical Drawing Project</h3>
               <p>
-                This project is aapplication that was built using .net9 and Blazor. In this apllication we allowed the user who are 
-                civil engineers to insert a pdf file of a shopticket or blueprint and the application will extract the data from the pdf file and insert it into a database. 
-                The user can then view the data in a table and also export it to an excel file.
+                This project is an application that was built using .NET 9 and Blazor. 
+                It allows civil engineers to upload PDF blueprints; the system extracts 
+                data from the files and inserts it into a database for Excel export.
               </p>
            </div>
 
-           <div className="project-card">
+           <div className="BA">
               <h3>BankApp</h3>
               <p>Mobile-first e-commerce platform design.</p>
            </div>
-           {/* Filler content to ensure page is tall enough to scroll */}
+           
+           {/* Spacer for scrolling */}
            <div style={{ height: '500px' }}></div> 
         </section>
       </main>
