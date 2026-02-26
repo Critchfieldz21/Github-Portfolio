@@ -1,29 +1,23 @@
-/* 1. The Moving Wave Background */
+/* 1. SOLID BACKGROUND */
 .App {
   text-align: center;
   min-height: 100vh;
-  /* The Gradient: Blue -> Cyan -> Teal */
-  background: linear-gradient(-45deg, #ffffff, #090e0f, #ee0000, #23d5ab);
-  background-size: 400% 400%;
-  animation: gradientBG 15s ease infinite;
+  /* Use a solid professional dark color */
+  background-color: #0f172a; 
+  color: white;
+  margin: 0;
+  padding: 0;
 }
 
-/* 2. Animation Keyframes */
-@keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* 3. Header - Now Semi-Transparent */
+/* 2. HERO SECTION */
 .App-header {
   min-height: 100vh; 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* Changed to RGBA so the wave shows through */
-  background-color: rgba(48, 78, 139, 0.85); 
+  /* Removed the separate background color to make it seamless */
+  background-color: transparent; 
   color: white;
 }
 
@@ -33,45 +27,83 @@
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 20px;
-  animation: App-logo-spin infinite 20s linear;
+  border: 5px solid #23d5ab; /* Cyan border to pop against solid background */
 }
 
-.App-header p {
+.hero-text {
   font-size: 50px;
-  margin: 0;
+  font-weight: bold;
 }
 
-/* 4. Content - Now Semi-Transparent */
+/* 3. MAIN CONTENT */
 .App-content {
-  padding: 50px;
-  /* Matches header transparency */
-  background-color: rgba(48, 78, 139, 0.9);
+  padding: 60px 20px;
+  background-color: transparent; /* Seamless transition */
   color: white;
   text-align: left;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-/* About Section Styles */
-#about h1 {
-  border-bottom: 3px solid white;
+h1 {
+  border-bottom: 3px solid #23d5ab;
   display: inline-block;
-  font-size: 50px;
+  font-size: 45px;
+  margin-bottom: 30px;
 }
 
-#about p {
-  font-size: 20px;
-  line-height: 1.6;
-  margin-top: -20px;    
-  margin-bottom: 100px;
+/* 4. PROJECT GALLERY */
+.project-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin: 25px 0 60px 0;
 }
 
-/* Projects Section Styles */
-#projects h1 {
-  /* Changed from solid #304e8b to transparent so it doesn't look like a patch */
-  background-color: transparent; 
-  color: white;
-  font-size: 40px;
-  display: inline-block;     
-  border-bottom: 3px solid white;
+.project-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover; 
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  cursor: zoom-in;
 }
 
+.project-img:hover {
+  transform: translateY(-5px);
+  border-color: #23d5ab;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
 
+/* 5. LIGHTBOX MODAL */
+.img-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  cursor: zoom-out;
+}
+
+/* 6. SKILLS GRID */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.skill-group h4 {
+  color: #23d5ab;
+  margin-bottom: 12px;
+}
+
+.skill-group ul { list-style: none; padding: 0; }
+.skill-group li { font-size: 18px; margin-bottom: 8px; opacity: 0.8; }
+.footer-spacer { height: 100px; }

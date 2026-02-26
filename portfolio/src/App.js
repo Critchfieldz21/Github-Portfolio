@@ -1,47 +1,120 @@
+import React, { useState } from 'react';
 import './App.css';
 import logo from './logo.jpg';
+import TDPHistory from './images/historyPage.png';
+import TDPHome from './images/homePage.png';
+import TDPProcessing from './images/processingPage.png';
 
 function App() {
+  // State to track which image is currently zoomed in
+  const [selectedImg, setSelectedImg] = useState(null);
+
   return (
     <div className="App">
-      {/* Section 1: Full Screen Hero */}
+      {/* ZOOM MODAL: Only visible when an image is clicked */}
+      {selectedImg && (
+        <div className="img-modal" onClick={() => setSelectedImg(null)}>
+          <span className="close-btn">&times;</span>
+          <img src={selectedImg} alt="Zoomed View" />
+        </div>
+      )}
+
+      {/* HERO SECTION */}
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Welcome to my portfolio!
-        </p>
+        <img src={logo} className="App-logo" alt="Zachary Critchfield" />
+        <p className="hero-text">Welcome to my portfolio!</p>
       </header>
 
-      {/* Section 2: Content */}
       <main className="App-content">
+        {/* ABOUT SECTION */}
         <section id="about">
           <h1>About Me</h1>
-          <p>
-           Hi my name is Zachary critchifled and I am a software developer who has experience in variuos different programming languages and frameworks.
-            I have a passion for creating innovative solutions and am always eager to learn new technologies.
+          <p className="about-text">
+            Hi, my name is <strong>Zachary Critchfield</strong>. I am a software developer 
+            with experience in various programming languages and frameworks. I have a passion 
+            for creating innovative solutions and am always eager to learn new technologies.
           </p>
         </section>
 
+        {/* PROJECTS SECTION */}
         <section id="projects">
-           <h1>My Projects</h1>
+          <h1>My Projects</h1>
+          <div className="project-entry">
+            <h3>Technical Drawing Project (.NET 9 & Blazor)</h3>
+            <p>
+              This application allows civil engineers to upload PDF blueprints. 
+              The system extracts data from the files and inserts it into a 
+              database for automated Excel export.
+            </p>
+            
+            {/* Rectangular Screenshots with Zoom-on-Click */}
+            <div className="project-images">
+              <img 
+                src={TDPHome} 
+                className="project-img" 
+                alt="TDP Home Page" 
+                onClick={() => setSelectedImg(TDPHome)}
+              />
+              <img 
+                src={TDPProcessing} 
+                className="project-img" 
+                alt="TDP Processing" 
+                onClick={() => setSelectedImg(TDPProcessing)}
+              />
+              <img 
+                src={TDPHistory} 
+                className="project-img" 
+                alt="TDP History" 
+                onClick={() => setSelectedImg(TDPHistory)}
+              />
+            </div>
+          </div>
 
-           <div className="TDP">
-              <h3>Technical Drawing Project</h3>
-              <p>
-                This project is an application that was built using .NET 9 and Blazor. 
-                It allows civil engineers to upload PDF blueprints; the system extracts 
-                data from the files and inserts it into a database for Excel export.
-              </p>
-           </div>
-
-           <div className="BA">
-              <h3>BankApp</h3>
-              <p>Mobile-first e-commerce platform design.</p>
-           </div>
-           
-           {/* Spacer for scrolling */}
-           <div style={{ height: '500px' }}></div> 
+          <div className="project-entry">
+            <h3>BankApp</h3>
+            <p>A mobile-first e-commerce platform design focusing on secure transactions.</p>
+          </div>
         </section>
+
+        {/* ORGANIZED SKILLS SECTION */}
+        <section id="skills">
+          <h1>Technical Skills</h1>
+          <div className="skills-container">
+            <div className="skill-group">
+              <h4>Development</h4>
+              <ul>
+                <li>C#, C++, Java, Python</li>
+                <li>HTML, CSS, JavaScript</li>
+                <li>.NET, React, Blazor</li>
+              </ul>
+            </div>
+            <div className="skill-group">
+              <h4>Data & Systems</h4>
+              <ul>
+                <li>SQL Server, SQLite, MongoDB</li>
+                <li>Data Encryption & Parsing</li>
+                <li>MS Windows, MacOS, Linux</li>
+              </ul>
+            </div>
+            <div className="skill-group">
+              <h4>Design & Tools</h4>
+              <ul>
+                <li>SysML, UML Designs</li>
+                <li>Design Patterns</li>
+                <li>Vim, Nano, Git, VS Code</li>
+              </ul>
+            </div>
+            <div className="skill-group">
+              <h4>Professional</h4>
+              <ul>
+                <li>Agile Methodology</li>
+                <li>Deadline Management</li>
+                <li>Work Ethic & Discipline</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <div className="footer-spacer"></div>
       </main>
     </div>
   );
