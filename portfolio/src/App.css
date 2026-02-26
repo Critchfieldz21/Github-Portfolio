@@ -1,0 +1,34 @@
+.App-header {
+  /* Keeps the header the full height of the window */
+  min-height: 100vh; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #304e8b;
+  color: white;
+}
+
+.App-logo {
+  /* Removes fixed positioning so it flows naturally */
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px; /* Adds space between logo and text */
+  animation: App-logo-spin infinite 20s linear;
+}
+
+.App-header p {
+  /* Removes fixed positioning */
+  font-size: 50px;
+  margin: 0;
+}
+
+/* Style for the new content section */
+.App-content {
+  padding: 50px;
+  background-color: #304e8b;
+  color: white;
+  text-align: left;
+}
