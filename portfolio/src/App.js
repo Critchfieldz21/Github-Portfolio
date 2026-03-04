@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
 import logo from './logo.jpg';
-import TDPHistory from './images/historyPage.png';
-import TDPHome from './images/homePage.png';
-import TDPProcessing from './images/processingPage.png';
-import BcreateLogin from './images/BankCreateLogin.png';
-import Bhome from './images/BankHomePage.png';
-import Blogin from './images/BankLogin.png';
 
 function App() {
   // State to track which image is currently zoomed in
@@ -24,8 +18,10 @@ function App() {
 
       {/* HERO SECTION */}
       <header className="App-header">
+        
+        <p className="hero-text">Welcome!</p>
         <img src={logo} className="App-logo" alt="Zachary Critchfield" />
-        <p className="hero-text">Welcome to my portfolio!</p>
+        
       </header>
 
       <main className="App-content">
@@ -33,7 +29,7 @@ function App() {
         <section id="about">
           <h1>About Me</h1>
           <p className="about-text">
-            Hi, my name is <strong>Zachary Critchfield</strong>. I am a software developer 
+            Hi, my name is Zachary Critchfield. I am a software developer 
             with experience in various programming languages and frameworks. I have a passion 
             for creating innovative solutions and am always eager to learn new technologies.
           </p>
@@ -44,59 +40,30 @@ function App() {
           <h1>My Projects</h1>
           <div className="project-entry">
             <h3>Technical Drawing Project (.NET 9 & Blazor)</h3>
-            <p>
-              This application allows civil engineers to upload PDF blueprints. 
-              The system extracts data from the files and inserts it into a 
-              database for automated Excel export.
-            </p>
+            
+            <li>Able to parse through pdf file to extract information</li>
+            <li>Database: stores information of each valid pdf shopticket, used to give information of a shopticket without running the program again. </li>
+            <li>Interactive frontend/ website </li>
+            <li>Playwright to test web app</li>
+            <li>Using C#, Html, css to create and design a functioning app</li>
+            <li>Use of the agile methodology</li>
+
             
             {/* Rectangular Screenshots with Zoom-on-Click */}
-            <div className="project-images">
-              <img 
-                src={TDPHome} 
-                className="project-img" 
-                alt="TDP Home Page" 
-                onClick={() => setSelectedImg(TDPHome)}
-              />
-              <img 
-                src={TDPProcessing} 
-                className="project-img" 
-                alt="TDP Processing" 
-                onClick={() => setSelectedImg(TDPProcessing)}
-              />
-              <img 
-                src={TDPHistory} 
-                className="project-img" 
-                alt="TDP History" 
-                onClick={() => setSelectedImg(TDPHistory)}
-              />
-            </div>
+            
           </div>
 
           <div className="project-entry">
             <h3>BankApp</h3>
-            <p>A mobile-first e-commerce platform design focusing on secure transactions.</p>
-          
-           <div className="project-images">
-              <img 
-                src={Bhome} 
-                className="project-img" 
-                alt="BankApp Home Page" 
-                onClick={() => setSelectedImg(Bhome)}
-              />
-              <img 
-                src={BcreateLogin} 
-                className="project-img" 
-                alt="BankApp Create Login Page" 
-                onClick={() => setSelectedImg(BcreateLogin)}
-              />
-              <img 
-                src={Blogin} 
-                className="project-img" 
-                alt="BankApp Login Page" 
-                onClick={() => setSelectedImg(Blogin)}
-              />
-            </div>
+      
+            <li>Database that store personal information of a user</li>
+            <li>Encrypted data in the database so no one can see them</li>
+            <li>Sign page to allow users to sign in, allow for new user to create account and store it to the database</li>
+            <li>Allow the user to see recent transaction on home page(recent transaction is store in database)</li>
+            <li>Home page that display users name, balance, recent transactions from database</li>
+
+
+           
           
           </div>
         </section>
