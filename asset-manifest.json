@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.ce6fd4f3.css",
+    "main.js": "/portfolio/static/js/main.ee3cee0f.js",
+    "static/js/453.a7d99afe.chunk.js": "/portfolio/static/js/453.a7d99afe.chunk.js",
+    "static/media/processingPage.png": "/portfolio/static/media/processingPage.3b03cd5123fc6f1d2d25.png",
+    "static/media/logo.jpg": "/portfolio/static/media/logo.50cfba32681b162fba4a.jpg",
+    "static/media/homePage.png": "/portfolio/static/media/homePage.a1fe7f9b425a81792f41.png",
+    "static/media/historyPage.png": "/portfolio/static/media/historyPage.ef2976ca7f5828138cc1.png",
+    "static/media/BankCreateLogin.png": "/portfolio/static/media/BankCreateLogin.a108d4d6173dc1774428.png",
+    "static/media/BankHomePage.png": "/portfolio/static/media/BankHomePage.2a5a04c3a2241fdf3616.png",
+    "static/media/BankLogin.png": "/portfolio/static/media/BankLogin.85842904c88574a51c7d.png",
+    "index.html": "/portfolio/index.html",
+    "main.ce6fd4f3.css.map": "/portfolio/static/css/main.ce6fd4f3.css.map",
+    "main.ee3cee0f.js.map": "/portfolio/static/js/main.ee3cee0f.js.map",
+    "453.a7d99afe.chunk.js.map": "/portfolio/static/js/453.a7d99afe.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ce6fd4f3.css",
+    "static/js/main.ee3cee0f.js"
+  ]
+}
