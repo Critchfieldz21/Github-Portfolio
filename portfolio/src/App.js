@@ -19,8 +19,15 @@ function App() {
       {/* HERO SECTION */}
       <header className="App-header">
         
-        <p className="hero-text">Welcome!</p>
+        <h1 className="hero-text">Welcome!</h1>
         <img src={logo} className="App-logo" alt="Zachary Critchfield" />
+
+        <p>info:</p>
+        <p>Name: Zachary Critchfield</p>
+        <p>Email: critchfieldz21@gmail.com</p>
+        <p>Github: <a href="https://github.com/Critchfieldz21" target="_blank" rel="noopener noreferrer">GitHub Profile</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/zachary-critchfield-4955a0335?trk=people-guest_people_search-card" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></p>
+        
         
       </header>
 
@@ -28,12 +35,14 @@ function App() {
         {/* ABOUT SECTION */}
         <section id="about">
           <h1>About Me</h1>
-          <p className="about-text">
-            Hi, my name is Zachary Critchfield. I am a software developer 
-            with experience in various programming languages and frameworks. I have a passion 
-            for creating innovative solutions and am always eager to learn new technologies.
+          <p>
+            I am a software developer with a passion for creating efficient and user-friendly applications. 
+            With experience in various programming languages and frameworks, I enjoy tackling complex problems and delivering innovative solutions. 
+            My background includes working on projects that involve data parsing, database management, and interactive web development. 
+            I am always eager to learn new technologies and collaborate with others to bring ideas to life.
           </p>
         </section>
+
 
         {/* PROJECTS SECTION */}
         <section id="projects">
@@ -48,19 +57,42 @@ function App() {
             <li>Using C#, Html, css to create and design a functioning app</li>
             <li>Use of the agile methodology</li>
 
-            
+            <a href="https://github.com/Critchfieldz21/Blobfish" target="_blank" rel="noopener noreferrer">
+              Code on GitHub
+            </a>
+
             {/* Rectangular Screenshots with Zoom-on-Click */}
             
           </div>
 
           <div className="project-entry">
-            <h3>BankApp</h3>
+            <h3>BankApp (React)</h3>
       
-            <li>Database that store personal information of a user</li>
-            <li>Encrypted data in the database so no one can see them</li>
-            <li>Sign page to allow users to sign in, allow for new user to create account and store it to the database</li>
-            <li>Allow the user to see recent transaction on home page(recent transaction is store in database)</li>
-            <li>Home page that display users name, balance, recent transactions from database</li>
+              <li>Engineered a secure authentication system with encrypted storage for user credentials, ensuring high-level data privacy and security.</li>
+              <li>Architected a relational database schema to manage sensitive user information and transaction history using industry-standard encryption.</li>
+              <li>Developed a dynamic dashboard that displays real-time user metrics, including account balances and activity, by streamlining data retrieval from the SQL backend.</li>
+              <li>Implemented a full-cycle user management system, including account creation and secure sign-in, with seamless integration into the database layer.</li>
+
+
+           
+          
+          </div>
+
+
+          <div className="project-entry">
+            <h3>Inventory tracker (In progress)</h3>
+      
+            <li>Architected a SQL-based database structure, implementing primary/foreign key constraints to ensure data consistency across the system</li>
+            <li>Developed responsive and interactive user interfaces using React</li>
+            <li></li>
+            <li></li>
+
+            <a href="https://github.com/Critchfieldz21/Inventory-System" target="_blank" rel="noopener noreferrer">
+              Code on GitHub
+            </a>
+            
+
+
 
 
            

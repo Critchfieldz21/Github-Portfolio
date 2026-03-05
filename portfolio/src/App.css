@@ -6,14 +6,20 @@
   --glass-border: rgba(255, 255, 255, 0.1);
   --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
+.App-header p,
+.App-header a {
+  display: inline-block;
+  vertical-align: left; 
+  margin: 0;
+  line-height: 1.5;     
+}
 
 .App {
   text-align: center;
-  min-height: 100vh;
+  min-height: 100px;
   background-color: var(--bg-dark);
   color: #f8fafc;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  line-height: 1.6;
 }
 
 /* 2. HERO SECTION */
@@ -131,4 +137,12 @@ h1::after {
 
 .footer-spacer {
   height: 120px;
+}
+
+ a {
+  display: inline-block;
+  margin-top: 15px;
+  color: var(--primary-accent);
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
