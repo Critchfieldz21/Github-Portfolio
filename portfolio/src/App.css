@@ -1,25 +1,30 @@
 /* 1. GLOBAL & BACKGROUND */
 :root {
-  --primary-accent: #23d5ab;
-  --bg-dark: #0f172a;
-  --glass-bg: rgba(255, 255, 255, 0.03);
-  --glass-border: rgba(255, 255, 255, 0.1);
+  /* Updated to a more vibrant, balanced palette */
+  --primary-accent: #00f2fe; /* Electric Cyan */
+  --secondary-accent: #89d4ff; /* Soft Blue */
+  --bg-dark: #0b1120; /* Deeper Midnight */
+  --bg-card: #161e2d; /* Solid background for cards for better contrast */
+  --glass-bg: rgba(30, 41, 59, 0.5);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --text-main: #f1f5f9;
+  --text-dim: #94a3b8;
   --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.App-header p,
-.App-header a {
-  margin: 1px ;
-  text-align: left;
-
 }
 
 .App {
   text-align: center;
   min-height: 100px;
   background-color: var(--bg-dark);
-  color: #f8fafc;
+  color: var(--text-main);
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  selection-background-color: var(--primary-accent);
+}
+
+.App-header p,
+.App-header a {
+  margin: 1px;
+  text-align: left;
 }
 
 /* 2. HERO SECTION */
@@ -29,24 +34,34 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(circle at top right, #1e293b, transparent);
+  /* Multi-stop gradient for a premium feel */
+  background: 
+    radial-gradient(circle at top right, rgba(0, 242, 254, 0.05), transparent 40%),
+    radial-gradient(circle at bottom left, rgba(137, 212, 255, 0.05), transparent 40%);
 }
 
 .App-logo {
-  height: 220px;
-  width: 220px;
+  height: 250px;
+  width: 250px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 30px;
-  border: 4px solid var(--primary-accent);
-  box-shadow: 0 0 30px rgba(35, 213, 171, 0.2);
+  border: 2px solid var(--glass-border); /* Thinner border is more modern */
+  box-shadow: 0 0 40px rgba(0, 242, 254, 0.15);
+  transition: var(--transition-smooth);
+}
+
+.App-logo:hover {
+  border-color: var(--primary-accent);
+  box-shadow: 0 0 60px rgba(0, 242, 254, 0.25);
 }
 
 .hero-text {
   font-size: clamp(40px, 8vw, 70px);
   font-weight: 800;
-  letter-spacing: -1px;
-  background: linear-gradient(to right, #fff, var(--primary-accent));
+  letter-spacing: -2px;
+  /* Sleeker white-to-blue gradient */
+  background: linear-gradient(135deg, #fff 30%, var(--secondary-accent));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -54,7 +69,7 @@
 /* 3. MAIN CONTENT */
 .App-content {
   padding: 100px 24px;
-  max-width: 900px; /* Slimmed down for better text readability */
+  max-width: 800px; /* Even slimmer for optimal reading length */
   margin: 0 auto;
   text-align: left;
 }
@@ -64,55 +79,59 @@ h1 {
   font-weight: 700;
   margin-bottom: 40px;
   position: relative;
+  color: #fff;
 }
 
 h1::after {
   content: '';
   display: block;
-  width: 50px;
+  width: 40px;
   height: 4px;
-  background: var(--primary-accent);
-  margin-top: 10px;
-  border-radius: 2px;
+  background: linear-gradient(to right, var(--primary-accent), var(--secondary-accent));
+  margin-top: 12px;
+  border-radius: 10px;
 }
 
-/* 4. PROJECT ENTRIES (TEXT ONLY) */
+/* 4. PROJECT ENTRIES */
 .project-entry {
-  margin-bottom: 30px;
-  padding: 35px;
+  margin-bottom: 24px;
+  padding: 40px;
   border: 1px solid var(--glass-border);
-  border-radius: 16px;
+  border-radius: 20px;
   background: var(--glass-bg);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
   transition: var(--transition-smooth);
 }
 
 .project-entry:hover {
-  transform: translateX(10px); /* Subtle sideways shift since there's no image */
-  border-color: rgba(35, 213, 171, 0.4);
-  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-5px); /* Vertical lift feels more premium than sideways */
+  border-color: rgba(0, 242, 254, 0.3);
+  background: rgba(30, 41, 59, 0.8);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
 }
 
 .project-entry h3 {
   color: var(--primary-accent);
   font-size: 24px;
   margin-top: 0;
+  letter-spacing: -0.5px;
 }
 
 /* 5. SKILLS GRID */
 .skills-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 40px;
+  margin-top: 50px;
 }
 
 .skill-group h4 {
-  color: var(--primary-accent);
+  color: var(--secondary-accent);
   text-transform: uppercase;
-  letter-spacing: 1.5px;
-  font-size: 13px;
-  margin-bottom: 15px;
+  letter-spacing: 2px;
+  font-size: 11px;
+  margin-bottom: 20px;
+  opacity: 0.8;
 }
 
 .skill-group ul {
@@ -121,28 +140,50 @@ h1::after {
 }
 
 .skill-group li {
-  font-size: 17px;
-  margin-bottom: 10px;
-  color: #cbd5e1;
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: var(--text-dim);
   display: flex;
   align-items: center;
 }
 
 .skill-group li::before {
-  content: "•";
+  content: "→"; /* Modern arrow instead of dot */
   color: var(--primary-accent);
-  margin-right: 12px;
-  font-weight: bold;
+  margin-right: 10px;
+  font-size: 14px;
+  opacity: 0.7;
 }
 
 .footer-spacer {
   height: 120px;
 }
 
- a {
+a {
   display: inline-block;
   margin-top: 15px;
   color: var(--primary-accent);
-  font-weight: 500;
-  transition: color 0.3s ease;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+  position: relative;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--primary-accent);
+  transition: width 0.3s ease;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+a:hover {
+  color: var(--secondary-accent);
 }

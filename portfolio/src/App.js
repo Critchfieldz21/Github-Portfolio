@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import logo from './logo.jpg';
+import logo from './1730067259215.jpg';
 
 function App() {
   // State to track which image is currently zoomed in
