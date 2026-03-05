@@ -22,7 +22,7 @@ function App() {
         <h1 className="hero-text">Welcome!</h1>
         <img src={logo} className="App-logo" alt="Zachary Critchfield" />
 
-        <p>info:</p>
+      
         <p>Name: Zachary Critchfield</p>
         <p>Email: critchfieldz21@gmail.com</p>
         <p>Github: <a href="https://github.com/Critchfieldz21" target="_blank" rel="noopener noreferrer">GitHub Profile</a></p>
@@ -60,8 +60,6 @@ function App() {
             <a href="https://github.com/Critchfieldz21/Blobfish" target="_blank" rel="noopener noreferrer">
               Code on GitHub
             </a>
-
-            {/* Rectangular Screenshots with Zoom-on-Click */}
             
           </div>
 
@@ -73,9 +71,6 @@ function App() {
               <li>Developed a dynamic dashboard that displays real-time user metrics, including account balances and activity, by streamlining data retrieval from the SQL backend.</li>
               <li>Implemented a full-cycle user management system, including account creation and secure sign-in, with seamless integration into the database layer.</li>
 
-
-           
-          
           </div>
 
 
