@@ -79,8 +79,6 @@ function App() {
       
             <li>Architected a SQL-based database structure, implementing primary/foreign key constraints to ensure data consistency across the system</li>
             <li>Developed responsive and interactive user interfaces using React</li>
-            <li></li>
-            <li></li>
 
             <a href="https://github.com/Critchfieldz21/Inventory-System" target="_blank" rel="noopener noreferrer">
               Code on GitHub
