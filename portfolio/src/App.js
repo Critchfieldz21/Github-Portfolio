@@ -57,7 +57,7 @@ function App() {
             <li>Using C#, Html, css to create and design a functioning app</li>
             <li>Use of the agile methodology</li>
 
-            <a href="https://github.com/Critchfieldz21/Blobfish" target="_blank" rel="noopener noreferrer">
+            <a href="https://steadfast-dream-production-ac96.up.railway.app" target="_blank" rel="noopener noreferrer">
               Code on GitHub
             </a>
             
@@ -80,7 +80,7 @@ function App() {
             <li>Architected a SQL-based database structure, implementing primary/foreign key constraints to ensure data consistency across the system</li>
             <li>Developed responsive and interactive user interfaces using React</li>
 
-            <a href="https://github.com/Critchfieldz21/Inventory-System" target="_blank" rel="noopener noreferrer">
+            <a href="https://inventory-tracker-ten-plum.vercel.app" target="_blank" rel="noopener noreferrer">
               Code on GitHub
             </a>
             
