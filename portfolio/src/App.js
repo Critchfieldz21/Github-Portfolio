@@ -1,10 +1,21 @@
 import React, { useState } from 'react';
 import './App.css';
-import logo from './1730067259215.jpg';
+import logo from './images/1730067259215.jpg';
 
 function App() {
   // State to track which image is currently zoomed in
   const [selectedImg, setSelectedImg] = useState(null);
+
+  // Function to handle PDF/ZIP download
+  const downloadPDF = (fileName) => {
+    const fileUrl = `/pdfs/${fileName}`;
+    const link = document.createElement('a');
+    link.href = fileUrl;
+    link.download = fileName;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <div className="App">
@@ -57,9 +68,15 @@ function App() {
             <li>Using C#, Html, css to create and design a functioning app</li>
             <li>Use of the agile methodology</li>
 
-            <a href="https://steadfast-dream-production-ac96.up.railway.app" target="_blank" rel="noopener noreferrer">
-              Code on GitHub
-            </a>
+            <div>
+              <a href="https://steadfast-dream-production-ac96.up.railway.app" target="_blank" rel="noopener noreferrer">
+                Code on GitHub
+              </a>
+              <br />
+              <a href="#" onClick={(e) => { e.preventDefault(); downloadPDF('tech-draw.zip'); }} className="download-link">
+                Download Test PDFs For Website
+              </a>
+            </div>
             
           </div>
 

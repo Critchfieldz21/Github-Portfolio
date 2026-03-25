@@ -162,6 +162,7 @@ h1::after {
 a {
   display: inline-block;
   margin-top: 15px;
+  margin-bottom: 15px;
   color: var(--primary-accent);
   font-weight: 600;
   text-decoration: none;
@@ -186,4 +187,43 @@ a:hover::after {
 
 a:hover {
   color: var(--secondary-accent);
+}
+
+/* 6. LINK & DOWNLOAD CONTAINER */
+.link-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 15px;
+  align-items: center;
+}
+
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: 2px solid var(--primary-accent);
+  background-color: rgba(0, 242, 254, 0.1);
+  color: var(--primary-accent);
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  text-decoration: none;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.download-btn:hover {
+  background-color: rgba(0, 242, 254, 0.2);
+  border-color: var(--secondary-accent);
+  color: var(--secondary-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 242, 254, 0.2);
+}
+
+.download-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 8px rgba(0, 242, 254, 0.1);
 }
