@@ -178,3 +178,39 @@ a:hover::after {
 a:hover {
   color: var(--secondary-accent);
 }
+
+.download-link-btn {
+  display: inline-block;
+  margin-top: 15px;
+  margin-bottom: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--primary-accent);
+  font-weight: 600;
+  font-size: inherit;
+  font-family: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  position: relative;
+}
+
+.download-link-btn::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--primary-accent);
+  transition: width 0.3s ease;
+}
+
+.download-link-btn:hover::after {
+  width: 100%;
+}
+
+.download-link-btn:hover {
+  color: var(--secondary-accent);
+}

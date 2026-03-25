@@ -106,9 +106,12 @@ function App() {
                   </>
                 )}
                 {project.downloadFile && (
-                  <a href="#" onClick={(e) => handleDownloadClick(e, project.downloadFile)}>
+                  <button 
+                    onClick={(e) => handleDownloadClick(e, project.downloadFile)}
+                    className="download-link-btn"
+                  >
                     Download Test PDFs For Website
-                  </a>
+                  </button>
                 )}
               </div>
             </div>
