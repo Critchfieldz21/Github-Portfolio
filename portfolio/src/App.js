@@ -1,25 +1,66 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import './App.css';
 import logo from './images/1730067259215.jpg';
 
+const PROJECTS = [
+  {
+    title: 'Technical Drawing Project (.NET 9 & Blazor)',
+    description: [
+      'Able to parse through pdf file to extract information',
+      'Database: stores information of each valid pdf shopticket, used to give information of a shopticket without running the program again.',
+      'Interactive frontend/ website',
+      'Playwright to test web app',
+      'Using C#, Html, css to create and design a functioning app',
+      'Use of the agile methodology'
+    ],
+    link: 'https://steadfast-dream-production-ac96.up.railway.app',
+    downloadFile: 'tech-draw.zip'
+  },
+  {
+    title: 'BankApp (React)',
+    description: [
+      'Engineered a secure authentication system with encrypted storage for user credentials, ensuring high-level data privacy and security.',
+      'Architected a relational database schema to manage sensitive user information and transaction history using industry-standard encryption.',
+      'Developed a dynamic dashboard that displays real-time user metrics, including account balances and activity, by streamlining data retrieval from the SQL backend.',
+      'Implemented a full-cycle user management system, including account creation and secure sign-in, with seamless integration into the database layer.'
+    ]
+  },
+  {
+    title: 'Inventory tracker (In progress)',
+    description: [
+      'Architected a SQL-based database structure, implementing primary/foreign key constraints to ensure data consistency across the system',
+      'Developed responsive and interactive user interfaces using React'
+    ],
+    link: 'https://inventory-tracker-ten-plum.vercel.app'
+  }
+];
+
+const SKILLS = {
+  'Development': ['C#, C++, Java, Python', 'HTML, CSS, JavaScript', '.NET, React, Blazor'],
+  'Data & Systems': ['SQL Server, SQLite, MongoDB', 'Data Encryption & Parsing', 'MS Windows, MacOS, Linux'],
+  'Design & Tools': ['SysML, UML Designs', 'Design Patterns', 'Vim, Nano, Git, VS Code'],
+  'Professional': ['Agile Methodology', 'Deadline Management', 'Work Ethic & Discipline']
+};
+
 function App() {
-  // State to track which image is currently zoomed in
   const [selectedImg, setSelectedImg] = useState(null);
 
-  // Function to handle PDF/ZIP download
-  const downloadPDF = (fileName) => {
-    const fileUrl = `/pdfs/${fileName}`;
+  const downloadFile = useCallback((fileName) => {
     const link = document.createElement('a');
-    link.href = fileUrl;
+    link.href = `/pdfs/${fileName}`;
     link.download = fileName;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-  };
+  }, []);
+
+  const handleDownloadClick = useCallback((e, fileName) => {
+    e.preventDefault();
+    downloadFile(fileName);
+  }, [downloadFile]);
 
   return (
     <div className="App">
-      {/* ZOOM MODAL: Only visible when an image is clicked */}
       {selectedImg && (
         <div className="img-modal" onClick={() => setSelectedImg(null)}>
           <span className="close-btn">&times;</span>
@@ -27,23 +68,16 @@ function App() {
         </div>
       )}
 
-      {/* HERO SECTION */}
       <header className="App-header">
-        
         <h1 className="hero-text">Welcome!</h1>
         <img src={logo} className="App-logo" alt="Zachary Critchfield" />
-
-      
         <p>Name: Zachary Critchfield</p>
         <p>Email: critchfieldz21@gmail.com</p>
         <p>Github: <a href="https://github.com/Critchfieldz21" target="_blank" rel="noopener noreferrer">GitHub Profile</a></p>
         <p>LinkedIn: <a href="https://www.linkedin.com/in/zachary-critchfield-4955a0335?trk=people-guest_people_search-card" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></p>
-        
-        
       </header>
 
       <main className="App-content">
-        {/* ABOUT SECTION */}
         <section id="about">
           <h1>About Me</h1>
           <p>
@@ -54,98 +88,46 @@ function App() {
           </p>
         </section>
 
-
-        {/* PROJECTS SECTION */}
         <section id="projects">
           <h1>My Projects</h1>
-          <div className="project-entry">
-            <h3>Technical Drawing Project (.NET 9 & Blazor)</h3>
-            
-            <li>Able to parse through pdf file to extract information</li>
-            <li>Database: stores information of each valid pdf shopticket, used to give information of a shopticket without running the program again. </li>
-            <li>Interactive frontend/ website </li>
-            <li>Playwright to test web app</li>
-            <li>Using C#, Html, css to create and design a functioning app</li>
-            <li>Use of the agile methodology</li>
-
-            <div>
-              <a href="https://steadfast-dream-production-ac96.up.railway.app" target="_blank" rel="noopener noreferrer">
-                Code on GitHub
-              </a>
-              <br />
-              <a href="#" onClick={(e) => { e.preventDefault(); downloadPDF('tech-draw.zip'); }} className="download-link">
-                Download Test PDFs For Website
-              </a>
+          {PROJECTS.map((project, idx) => (
+            <div className="project-entry" key={idx}>
+              <h3>{project.title}</h3>
+              {project.description.map((item, i) => (
+                <li key={i}>{item}</li>
+              ))}
+              <div>
+                {project.link && (
+                  <>
+                    <a href={project.link} target="_blank" rel="noopener noreferrer">
+                      Code on GitHub
+                    </a>
+                    <br />
+                  </>
+                )}
+                {project.downloadFile && (
+                  <a href="#" onClick={(e) => handleDownloadClick(e, project.downloadFile)}>
+                    Download Test PDFs For Website
+                  </a>
+                )}
+              </div>
             </div>
-            
-          </div>
-
-          <div className="project-entry">
-            <h3>BankApp (React)</h3>
-      
-              <li>Engineered a secure authentication system with encrypted storage for user credentials, ensuring high-level data privacy and security.</li>
-              <li>Architected a relational database schema to manage sensitive user information and transaction history using industry-standard encryption.</li>
-              <li>Developed a dynamic dashboard that displays real-time user metrics, including account balances and activity, by streamlining data retrieval from the SQL backend.</li>
-              <li>Implemented a full-cycle user management system, including account creation and secure sign-in, with seamless integration into the database layer.</li>
-
-          </div>
-
-
-          <div className="project-entry">
-            <h3>Inventory tracker (In progress)</h3>
-      
-            <li>Architected a SQL-based database structure, implementing primary/foreign key constraints to ensure data consistency across the system</li>
-            <li>Developed responsive and interactive user interfaces using React</li>
-
-            <a href="https://inventory-tracker-ten-plum.vercel.app" target="_blank" rel="noopener noreferrer">
-              Code on GitHub
-            </a>
-            
-
-
-
-
-           
-          
-          </div>
+          ))}
         </section>
 
-        {/* ORGANIZED SKILLS SECTION */}
         <section id="skills">
           <h1>Technical Skills</h1>
           <div className="skills-container">
-            <div className="skill-group">
-              <h4>Development</h4>
-              <ul>
-                <li>C#, C++, Java, Python</li>
-                <li>HTML, CSS, JavaScript</li>
-                <li>.NET, React, Blazor</li>
-              </ul>
-            </div>
-            <div className="skill-group">
-              <h4>Data & Systems</h4>
-              <ul>
-                <li>SQL Server, SQLite, MongoDB</li>
-                <li>Data Encryption & Parsing</li>
-                <li>MS Windows, MacOS, Linux</li>
-              </ul>
-            </div>
-            <div className="skill-group">
-              <h4>Design & Tools</h4>
-              <ul>
-                <li>SysML, UML Designs</li>
-                <li>Design Patterns</li>
-                <li>Vim, Nano, Git, VS Code</li>
-              </ul>
-            </div>
-            <div className="skill-group">
-              <h4>Professional</h4>
-              <ul>
-                <li>Agile Methodology</li>
-                <li>Deadline Management</li>
-                <li>Work Ethic & Discipline</li>
-              </ul>
-            </div>
+            {Object.entries(SKILLS).map(([category, items]) => (
+              <div className="skill-group" key={category}>
+                <h4>{category}</h4>
+                <ul>
+                  {items.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </section>
         <div className="footer-spacer"></div>
