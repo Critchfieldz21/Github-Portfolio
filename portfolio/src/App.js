@@ -60,6 +60,15 @@ const SKILLS = {
 
 function App() {
   const [selectedImg, setSelectedImg] = useState(null);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setSidebarOpen(false);
+    }
+  };
 
   const downloadFile = useCallback((fileName) => {
     const link = document.createElement('a');
@@ -83,6 +92,21 @@ function App() {
           <img src={selectedImg} alt="Zoomed View" />
         </div>
       )}
+
+      {/* Sidebar Navigation */}
+      <button className="sidebar-toggle" onClick={() => setSidebarOpen(!sidebarOpen)}>
+        ☰ Menu
+      </button>
+      
+      <nav className={`sidebar ${sidebarOpen ? 'open' : ''}`}>
+        <button className="sidebar-close" onClick={() => setSidebarOpen(false)}>✕</button>
+        <h3>Navigation</h3>
+        <ul>
+          <li><a onClick={() => scrollToSection('about')}>About</a></li>
+          <li><a onClick={() => scrollToSection('projects')}>Projects</a></li>
+          <li><a onClick={() => scrollToSection('skills')}>Skills</a></li>
+        </ul>
+      </nav>
 
       <header className="App-header">
         <h1 className="hero-text">Welcome!</h1>
