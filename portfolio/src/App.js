@@ -19,25 +19,41 @@ const PROJECTS = [
   {
     title: 'BankApp (React)',
     description: [
-      'Engineered a secure authentication system with encrypted storage for user credentials, ensuring high-level data privacy and security.',
-      'Architected a relational database schema to manage sensitive user information and transaction history using industry-standard encryption.',
-      'Developed a dynamic dashboard that displays real-time user metrics, including account balances and activity, by streamlining data retrieval from the SQL backend.',
-      'Implemented a full-cycle user management system, including account creation and secure sign-in, with seamless integration into the database layer.'
+      'Built a fully functional banking application where people can create accounts and manage their money securely.',
+      'Created a login system that safely stores passwords using encryption, so user accounts are protected from hackers.',
+      'Designed a dashboard that shows account balance, transaction history, and other important banking information in real-time.',
+      'Built features that let users transfer money between accounts and view all their transactions in one place.',
+      'Made the app work smoothly on the web with a clean, easy-to-understand interface that anyone can use.'
     ]
   },
   {
-    title: 'Inventory tracker (In progress)',
+    title: 'Inventory Tracker (In Progress)',
     description: [
-      'Architected a SQL-based database structure, implementing primary/foreign key constraints to ensure data consistency across the system',
-      'Developed responsive and interactive user interfaces using React'
+      'Built a system that keeps track of products and supplies in real-time, so businesses always know what they have in stock.',
+      'Created a user-friendly website where employees can easily search for items, see how many are available, and update quantities.',
+      'Designed a database that safely stores all inventory information and prevents mistakes like duplicate entries or lost data.',
+      'Made the system fast and easy to use, so users can find what they need in seconds instead of minutes.',
+      'Built with modern web technology (React) that works smoothly on phones, tablets, and computers.'
     ],
-    link: 'https://inventory-tracker-ten-plum.vercel.app'
+    // link: 'https://inventory-tracker-ten-plum.vercel.app'
+  },
+  {
+    title: 'Vital Reader - Medical Research Helper (In Progress)',
+    description: [
+      'Created an AI tool that reads medical research papers and summarizes them in plain English, saving doctors hours of reading time.',
+      'Built a smart system that automatically organizes medical articles by topic, making it easy to find relevant research quickly.',
+      'Used artificial intelligence to understand medical text and create clear summaries that highlight the most important findings.',
+      'Designed to handle large amounts of medical data while keeping patient information private and secure.',
+      'Made a simple interface where doctors and researchers can paste articles and get helpful summaries instantly.'
+    ]
   }
 ];
 
 const SKILLS = {
   'Development': ['C#, C++, Java, Python', 'HTML, CSS, JavaScript', '.NET, React, Blazor'],
-  'Data & Systems': ['SQL Server, SQLite, MongoDB', 'Data Encryption & Parsing', 'MS Windows, MacOS, Linux'],
+  'Data & Systems': ['SQL Server, SQLite, MongoDB', 'Data Encryption & Security', 'Authentication Systems', 'Real-time Data Processing', 'MS Windows, MacOS, Linux'],
+  'Testing & Quality': ['Playwright', 'Unit Testing', 'Test Automation'],
+  'AI & Machine Learning': ['Artificial Intelligence', 'Data Analysis', 'PDF Parsing & Data Extraction'],
   'Design & Tools': ['SysML, UML Designs', 'Design Patterns', 'Vim, Nano, Git, VS Code'],
   'Professional': ['Agile Methodology', 'Deadline Management', 'Work Ethic & Discipline']
 };
