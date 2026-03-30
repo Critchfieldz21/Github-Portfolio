@@ -277,6 +277,27 @@ a:hover {
   padding-left: 15px;
 }
 
+.nav-link {
+  background: none;
+  border: none;
+  color: var(--text-main);
+  cursor: pointer;
+  font-size: 16px;
+  transition: var(--transition-smooth);
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 10px;
+  border-radius: 6px;
+  font-family: inherit;
+}
+
+.nav-link:hover {
+  background: rgba(0, 242, 254, 0.1);
+  color: var(--primary-accent);
+  padding-left: 15px;
+}
+
 /* Sidebar margin already applied in main rules above */
 
 /* Mobile responsiveness */

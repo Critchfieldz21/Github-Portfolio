@@ -102,9 +102,9 @@ function App() {
         <button className="sidebar-close" onClick={() => setSidebarOpen(false)}>✕</button>
         <h3>Navigation</h3>
         <ul>
-          <li><a onClick={() => scrollToSection('about')}>About</a></li>
-          <li><a onClick={() => scrollToSection('projects')}>Projects</a></li>
-          <li><a onClick={() => scrollToSection('skills')}>Skills</a></li>
+          <li><button className="nav-link" onClick={() => scrollToSection('about')}>About</button></li>
+          <li><button className="nav-link" onClick={() => scrollToSection('projects')}>Projects</button></li>
+          <li><button className="nav-link" onClick={() => scrollToSection('skills')}>Skills</button></li>
         </ul>
       </nav>
 
